@@ -1,0 +1,96 @@
+@use '../../assets/SCSS/layout/flex';
+@use '../../assets/SCSS/layout/breakpoints';
+@use '../../assets/SCSS/animations/underline-fill' as animations;
+
+
+@include breakpoints.not-for-mobile {
+  app-burger-menu {
+    display: none;
+  }
+}
+
+@include breakpoints.for-tablet {
+  .tab-counter {
+    display: none;
+  }
+}
+
+.star-icon {
+  --size: 40px;
+  width: var(--size);
+  height: var(--size);
+}
+
+@include breakpoints.for-desktop {
+  .star-icon {
+    --size: 48px;
+  }
+}
+
+@include breakpoints.for-tablet {
+  .nav-row {
+    --padding: 0 0 0 2rem;
+  }
+}
+
+@include breakpoints.for-desktop {
+  .nav-row {
+    --padding: 0 0 0 3.5rem;
+  }
+}
+
+
+.nav {
+
+  &__list {
+    --padding: 2.25rem 3rem;
+
+    @include flex.flex-group {
+      align-content: center;
+    }
+
+    padding: var(--padding);
+
+    > li {
+      @include animations.underline-fill-center;
+    }
+  }
+
+  &-row {
+    --padding: 1.5rem;
+
+    @include flex.flex-group {
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    padding: var(--padding);
+    height: 6rem;
+  }
+}
+
+
+@include breakpoints.for-mobile {
+  .nav {
+    display: none;
+  }
+}
+
+@include breakpoints.for-tablet {
+  .nav-row {
+    --padding: 0 0 0 2rem;
+  }
+}
+
+@include breakpoints.for-desktop {
+  .nav {
+
+    &__list {
+      --padding: 2.25rem 10rem 2.25rem 7.5rem;
+    }
+
+    &-row {
+    --padding: 2.5rem 0 0 3.5rem;
+    }
+  }
+}

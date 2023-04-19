@@ -1,0 +1,89 @@
+$ff-body: 'Barlow Condensed', sans-serif;
+$ff-accent: 'Bellefair', serif;
+
+$fw-100: 0.875rem;
+$fw-200: 1rem;
+$fw-300: 1.125rem;
+$fw-400: 1.75rem;
+$fw-500: 2rem;
+$fw-600: 3.5rem;
+$fw-700: 6.25rem;
+$fw-800: 9.375rem;
+
+
+@mixin base-font {
+  font-family: $ff-body;
+  font-weight: 400;
+  font-size: $fw-300;
+}
+
+body { @include base-font; }
+
+@mixin h1 {
+  font-family: $ff-accent;
+  font-size: $fw-800;
+  text-transform: uppercase;
+}
+
+h1 { @include h1; }
+
+@mixin h2 {
+  font-family: $ff-accent;
+  font-size: $fw-700;
+  text-transform: uppercase;
+}
+
+h2 { @include h2; }
+
+@mixin h3 {
+  font-family: $ff-accent;
+  font-size: $fw-600;
+  text-transform: uppercase;
+}
+
+h3 { @include h3; }
+
+@mixin h4 {
+  font-family: $ff-accent;
+  font-size: $fw-500;
+  text-transform: uppercase;
+}
+
+h4 { @include h4; }
+
+@mixin h5 {
+  font-family: $ff-body;
+  font-size: $fw-400;
+  letter-spacing: 4.75px;
+  text-transform: uppercase;
+}
+
+h5 { @include h5; }
+
+@mixin subheading {
+  font-family: $ff-accent;
+  font-size: $fw-400;
+  text-transform: uppercase;
+}
+
+.subheading { @include subheading; }
+
+@mixin sub-subheading {
+  font-family: $ff-body;
+  font-size: $fw-100;
+  letter-spacing: 2.36px;
+  text-transform: uppercase;
+}
+
+.sub-subheading { @include sub-subheading; }
+
+
+@mixin nav-text {
+  font-family: $ff-body;
+  font-size: $fw-200;
+  letter-spacing: 2.7px;
+  text-transform: uppercase;
+}
+
+.nav { @include nav-text; }
+

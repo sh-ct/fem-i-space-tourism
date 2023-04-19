@@ -1,0 +1,25 @@
+<ng-container *ngIf="showMenu then menuShown else menuNotShown"></ng-container>
+
+<ng-template #menuNotShown>
+  <button type="button" (click)="toggleMenu()">
+      <img [src]="burgerIcon.url" [alt]="burgerIcon.alt" p>
+  </button>
+</ng-template>
+
+<ng-template #menuShown>
+  <div class="menu blur">
+
+    <button type="button" (click)="toggleMenu()">
+      <img [src]="crossIcon.url" [alt]="crossIcon.alt">
+    </button>
+
+    <nav class="nav">
+      <ul class="nav__list">
+        <li *ngFor="let tab of tabs; let i = index">
+          <strong class="tab-counter">0{{ i }}</strong> {{ tab.title }}
+        </li>
+      </ul>
+    </nav>
+
+  </div>
+</ng-template>

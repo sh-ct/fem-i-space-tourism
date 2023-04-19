@@ -1,0 +1,27 @@
+@use '../layout/flex';
+@use '../abstracts/variables' as *;
+
+.nav {
+
+  &__list {
+    @include flex.flex-group {
+      gap: $spacing-400;
+    }
+    padding: 0;
+
+    > li {
+      list-style: none;
+      cursor: pointer;
+    }
+  }
+
+}
+
+.tab-counter {
+  font-weight: bolder;
+}
+
+.blur {
+  background: hsla(0, 0%, 100%, 0.04);
+  backdrop-filter: blur(40.7742px); /* Note: backdrop-filter has minimal browser support */
+}

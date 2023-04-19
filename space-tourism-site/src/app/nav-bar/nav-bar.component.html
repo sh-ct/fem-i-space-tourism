@@ -1,1 +1,13 @@
-<p>nav-bar works!</p>
+<div class="nav-row">
+  <img class="star-icon" src="../../assets/icons/star.svg" alt="Circular icon of a transparent start on a solid white background.">
+  <div>
+    <nav class="nav">
+      <ul class="nav__list blur">
+        <li *ngFor="let tab of tabs; let i = index" [routerLink]="tab.url">
+          <strong class="tab-counter">0{{ i + 1 }}</strong>&nbsp;{{ tab.title }}
+        </li>
+      </ul>
+    </nav>
+    <app-burger-menu [tabs]="tabs"></app-burger-menu>
+  </div>
+</div>

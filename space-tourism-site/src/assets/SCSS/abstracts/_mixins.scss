@@ -1,0 +1,5 @@
+@mixin background($url) {
+  body {
+    background: $url;
+  }
+}

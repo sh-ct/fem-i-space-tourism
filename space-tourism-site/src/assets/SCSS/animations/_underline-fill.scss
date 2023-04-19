@@ -1,0 +1,36 @@
+@mixin underline-fill() {
+  position: relative;
+
+  &::after {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    width: 0;
+    content: '';
+    color: transparent;
+    background: #aaa;
+    height: 1px;
+
+    transition: all .5s;
+  }
+
+  &:is(:hover, :focus-visible)::after {
+    width: 100%;
+  }
+}
+
+@mixin underline-fill-center() {
+  @include underline-fill;
+
+  &::after {
+    margin: auto;
+  }
+}
+
+@mixin underline-fill-end() {
+  @include underline-fill;
+  &::after {
+    margin-inline-start: auto;
+  }
+}

@@ -1,0 +1,31 @@
+@use '../../assets/SCSS/layout/breakpoints';
+@use '../../assets/SCSS/layout/flex';
+
+button {
+  outline: none;
+  border: none;
+  cursor: pointer;
+  background: transparent;
+  padding-block: 5px;
+}
+
+.menu {
+  @include flex.flex-group {
+    flex-direction: column;
+  }
+  position: absolute;
+  inset: 0 0 0 30%;
+  padding: 2rem;
+  gap: 4rem;
+
+  button {
+    align-self: flex-end;
+  }
+}
+
+.nav {
+
+  &__list {
+    flex-direction: column;
+  }
+}
