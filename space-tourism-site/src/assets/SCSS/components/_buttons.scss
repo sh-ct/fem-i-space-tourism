@@ -1,0 +1,12 @@
+button {
+  border: none;
+  outline: none;
+  cursor: pointer;
+
+  border-radius: 100vw;
+  padding: 0.25rem 0.75rem;
+
+  &:is(:hover, :focus-visible) {
+    outline: none;
+  }
+}
