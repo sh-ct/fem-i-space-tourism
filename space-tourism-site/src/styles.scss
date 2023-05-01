@@ -7,20 +7,22 @@
 @use 'assets/SCSS/base/typography';
 @use 'assets/SCSS/abstracts/variables' as *;
 
-body {
-  background: center / cover url(assets/images/home/home-mobile.jpg), theme.$background;
-  color: theme.$font-color-body;
+html {
+  background: url(assets/images/home/home-mobile.jpg) no-repeat center center fixed, theme.$background;
+}
 
+body {
+  color: theme.$font-color-body;
 }
 
 @include breakpoints.for-tablet {
-  body {
-    background: center / cover url(assets/images/home/home-tablet.jpg);
+  html {
+    background: url(assets/images/home/home-tablet.jpg) no-repeat center center fixed, theme.$background;
   }
 }
 
 @include breakpoints.for-desktop {
-  body {
-    background: center / cover url(assets/images/home/home-desktop.jpg);
+  html {
+    background: url(assets/images/home/home-desktop.jpg) no-repeat center center fixed, theme.$background;
   }
 }

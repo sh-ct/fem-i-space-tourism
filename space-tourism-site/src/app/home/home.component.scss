@@ -1,0 +1,46 @@
+@use '../../assets/SCSS/base/typography' as *;
+@use '../../assets/SCSS/themes/theme';
+@use '../../assets/SCSS/animations/outline-expand' as *;
+@use '../../assets/SCSS/layout/breakpoints';
+@use '../../assets/SCSS/layout/grid-flow' as *;
+
+section {
+  --spacing: 1.5rem;
+  @include grid-flow {
+    gap: 1rem;
+    justify-items: center;
+  }
+  text-align: center;
+  margin-block-start: var(--spacing);
+  padding-inline: var(--spacing);
+
+}
+
+.heading {
+  @include home-heading;
+  margin-block-end: 0.5rem;
+}
+
+.btn--explore {
+  --width: 10rem;
+  --expand-width: calc(0.3 * var(--width));
+
+  @include home-cta;
+  @include outline-expand(theme.$primary-transparent, var(--expand-width));
+
+  background: theme.$home-cta-background;
+  width: var(--width);
+  aspect-ratio: 1/1;
+  border-radius: 50%;
+  margin-block: 3rem 0;
+}
+
+@include breakpoints.not-for-mobile {
+  .btn--explore {
+    --width: 17rem;
+  }
+}
+
+.text {
+  line-height: var(--spacing);
+}

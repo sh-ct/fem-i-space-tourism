@@ -1,7 +1,8 @@
 @use '../layout/breakpoints';
 @use '../themes/theme';
 
-$ff-body: 'Barlow Condensed', sans-serif;
+$ff-body: 'Barlow', sans-serif;
+$ff-body-accent: 'Barlow Condensed', sans-serif;
 $ff-accent: 'Bellefair', serif;
 
 $fs-000: 0.875rem;
@@ -19,35 +20,36 @@ $fs-title: 5rem;
 $fs-title-large: 9.375rem;
 
 $ls-000: 0;
-$ls-100: 2px;
-$ls-200: 2.36px;
-$ls-300: 2.7px;
-$ls-400: 3.38px;
-$ls-500: 4.72px;
+$ls-100: 1.25px;
+$ls-200: 2px;
+$ls-300: 2.36px;
+$ls-400: 2.7px;
+$ls-500: 3.38px;
+$ls-600: 4.72px;
 
 :root {
   // For Mobile
   // GENERAL
   --fs-body: #{$fs-050};
   --fs-nav: #{$fs-100};
-  --ls-nav: #{$ls-300};
+  --ls-nav: #{$ls-400};
   --fs-page-heading: #{$fs-100};
-  --ls-page-heading: #{$ls-300};
+  --ls-page-heading: #{$ls-400};
 
   // HOME
   --fs-home-heading: #{$fs-300};
-  --ls-home-heading: #{$ls-400};
+  --ls-home-heading: #{$ls-500};
   --fs-home-heading-large: #{$fs-title};
   --ls-home-heading-large: #{$ls-000};
-  --fs-home-cta: #{$fs-600};
+  --fs-home-cta: #{$fs-300};
   --ls-home-cta: #{$ls-100};
 
   // DESTINATIONS
   --fs-dest-nav: #{$fs-000};
-  --ls-dest-nav: #{$ls-200};
+  --ls-dest-nav: #{$ls-300};
   --fs-dest-heading: #{$fs-700};
   --fs-dest-stat-heading: #{$fs-000};
-  --ls-dest-stat-heading: #{$ls-200};
+  --ls-dest-stat-heading: #{$ls-300};
   --fs-dest-stat-value: #{$fs-500};
   --ls-dest-stat-value: #{$ls-000};
 
@@ -57,7 +59,7 @@ $ls-500: 4.72px;
 
   // TECHNOLOGY
   --fs-tech-heading: #{$fs-000};
-  --ls-tech-heading: #{$ls-200};
+  --ls-tech-heading: #{$ls-300};
   --fs-tech-vehicle: #{$fs-400};
   --fs-tech-nav: #{$fs-100};
 }
@@ -71,18 +73,25 @@ body {
 }
 
 @mixin home-heading {
-  font-family: $ff-body;
-  font-size: var(--fs-home-heading);
-  letter-spacing: var(--ls-home-heading);
-  color: theme.$accent;
+  font-family: $ff-body-accent;
+  font-size: var(--fs-page-heading);
+  letter-spacing: var(--ls-page-heading);
+  //line-height: 100px;
+  color: theme.$home-heading;
   text-transform: uppercase;
 
   span {
     font-family: $ff-accent;
     font-size: var(--fs-home-heading-large);
     letter-spacing: 0;
-    color: theme.$home-heading;
+    color: theme.$home-heading-large;
   }
+}
+
+@mixin home-cta {
+  font-size: var(--fs-home-cta);
+  letter-spacing: var(--ls-home-cta);
+  text-transform: uppercase;
 }
 
 @include breakpoints.for-tablet {
@@ -91,21 +100,23 @@ body {
     // GENERAL
     --fs-body: #{$fs-100};
     --fs-nav: #{$fs-000};
-    --ls-nav: #{$ls-200};
+    --ls-nav: #{$ls-300};
     --fs-page-heading: #{$fs-300};
-    --ls-page-heading: #{$ls-400};
+    --ls-page-heading: #{$ls-500};
 
     // HOME
-    --fs-home-heading: #{$fs-300};
-    --ls-home-heading: #{$ls-400};
+    //--fs-home-heading: #{$fs-300};
+    //--ls-home-heading: #{$ls-500};
     --fs-home-heading-large: #{$fs-title-large};
+    --fs-home-cta: #{$fs-600};
+    --ls-home-cta: #{$ls-200};
 
     // DESTINATIONS
     --fs-dest-nav: #{$fs-100};
-    --ls-dest-nav: #{$ls-300};
+    --ls-dest-nav: #{$ls-400};
     --fs-dest-heading: #{$fs-title};
     --fs-dest-stat-heading: #{$fs-000};
-    --ls-dest-stat-heading: #{$ls-200};
+    --ls-dest-stat-heading: #{$ls-300};
     --fs-dest-stat-value: #{$fs-500};
 
     // CREW
@@ -114,7 +125,7 @@ body {
 
     // TECHNOLOGY
     --fs-tech-heading: #{$fs-100};
-    --ls-tech-heading: #{$ls-300};
+    --ls-tech-heading: #{$ls-400};
     --fs-tech-vehicle: #{$fs-700};
     --fs-tech-nav: #{$fs-400};
   }
@@ -126,21 +137,23 @@ body {
     // GENERAL
     --fs-body: #{$fs-200};
     --fs-nav: #{$fs-100};
-    --ls-nav: #{$ls-300};
+    --ls-nav: #{$ls-400};
     --fs-page-heading: #{$fs-500};
-    --ls-page-heading: #{$ls-500};
+    --ls-page-heading: #{$ls-600};
 
     // HOME
-    --fs-home-heading: #{$fs-500};
-    --ls-home-heading: #{$ls-500};
+    //--fs-home-heading: #{$fs-500};
+    //--ls-home-heading: #{$ls-600};
     --fs-home-heading-large: #{$fs-title-large};
+    --fs-home-cta: #{$fs-600};
+    --ls-home-cta: #{$ls-200};
 
     // DESTINATIONS
     --fs-dest-nav: #{$fs-100};
-    --ls-dest-nav: #{$ls-300};
+    --ls-dest-nav: #{$ls-400};
     --fs-dest-heading: #{$fs-900};
     --fs-dest-stat-heading: #{$fs-000};
-    --ls-dest-stat-heading: #{$ls-200};
+    --ls-dest-stat-heading: #{$ls-300};
     --fs-dest-stat-value: #{$fs-500};
 
     // CREW
@@ -149,7 +162,7 @@ body {
 
     // TECHNOLOGY
     --fs-tech-heading: #{$fs-100};
-    --ls-tech-heading: #{$ls-300};
+    --ls-tech-heading: #{$ls-400};
     --fs-tech-vehicle: #{$fs-800};
     --fs-tech-nav: #{$fs-600};
   }
