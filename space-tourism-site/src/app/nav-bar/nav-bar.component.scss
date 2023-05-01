@@ -52,7 +52,10 @@
     padding: var(--padding);
 
     > li {
-      @include animations.underline-fill-center;
+      @include animations.underline-fill-center{
+        bottom: -2.25rem;
+        height: 3px;
+      }
     }
   }
 

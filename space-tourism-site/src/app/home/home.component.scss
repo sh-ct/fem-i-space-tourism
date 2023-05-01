@@ -16,9 +16,21 @@ section {
 
 }
 
+@include breakpoints.for-tablet{
+  section {
+    padding-inline: 10rem;
+  }
+}
+
 .heading {
   @include home-heading;
   margin-block-end: 0.5rem;
+}
+
+@include breakpoints.for-tablet{
+  .heading {
+    margin-block-start: 4rem;
+  }
 }
 
 .btn--explore {
@@ -41,6 +53,20 @@ section {
   }
 }
 
+@include breakpoints.for-tablet {
+  .btn--explore {
+    margin-block-start: 5rem;
+  }
+}
+
 .text {
   line-height: var(--spacing);
+}
+
+@include breakpoints.for-tablet {
+  .text {
+    line-height: 2rem;
+    padding-inline: 0.5rem;
+    margin-block-start: -1rem;
+  }
 }
