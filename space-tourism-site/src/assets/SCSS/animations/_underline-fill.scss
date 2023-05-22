@@ -13,6 +13,8 @@
     height: 1px;
 
     transition: all .5s;
+
+    @content;
   }
 
   &:is(:hover, :focus-visible)::after {
@@ -21,7 +23,9 @@
 }
 
 @mixin underline-fill-center() {
-  @include underline-fill;
+  @include underline-fill{
+    @content;
+  };
 
   &::after {
     margin: auto;
@@ -29,7 +33,9 @@
 }
 
 @mixin underline-fill-end() {
-  @include underline-fill;
+  @include underline-fill{
+    @content;
+  };
   &::after {
     margin-inline-start: auto;
   }

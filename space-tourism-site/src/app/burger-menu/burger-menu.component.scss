@@ -1,5 +1,6 @@
 @use '../../assets/SCSS/layout/breakpoints';
 @use '../../assets/SCSS/layout/flex';
+@use '../../assets/SCSS/base/typography';
 
 button {
   outline: none;
@@ -26,6 +27,9 @@ button {
 .nav {
 
   &__list {
+    @include typography.nav {
+      text-align: left;
+    }
     flex-direction: column;
   }
 }

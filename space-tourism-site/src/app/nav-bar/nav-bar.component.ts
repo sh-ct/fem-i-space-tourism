@@ -1,5 +1,6 @@
-import { Component, Input } from '@angular/core';
+import { Component } from '@angular/core';
 import { ITab } from "../models/tab.interface";
+import { tabs } from "./nav-bar-tabs.model";
 
 @Component({
   selector: 'app-nav-bar',
@@ -7,26 +8,5 @@ import { ITab } from "../models/tab.interface";
   styleUrls: ['./nav-bar.component.scss']
 })
 export class NavBarComponent {
-  tabs: ITab[] = [
-    {
-      title: 'home',
-      url: '/home',
-      selected: true
-    },
-    {
-      title: 'destination',
-      url: '/destination',
-      selected: true
-    },
-    {
-      title: 'crew',
-      url: '/crew',
-      selected: true
-    },
-    {
-      title: 'technology',
-      url: '/technology',
-      selected: true
-    },
-  ];
+  tabs: ITab[] = tabs;
 }
