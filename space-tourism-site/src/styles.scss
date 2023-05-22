@@ -8,7 +8,7 @@
 @use 'assets/SCSS/abstracts/variables' as *;
 
 html {
-  background: url(assets/images/home/home-mobile.jpg) no-repeat center center fixed, theme.$background;
+  background: url(assets/images/home/home-mobile.jpg) no-repeat center center / cover fixed, theme.$background;
 }
 
 body {
@@ -17,12 +17,12 @@ body {
 
 @include breakpoints.for-tablet {
   html {
-    background: url(assets/images/home/home-tablet.jpg) no-repeat center center fixed, theme.$background;
+    background: url(assets/images/home/home-tablet.jpg) no-repeat center center / cover fixed, theme.$background;
   }
 }
 
 @include breakpoints.for-desktop {
   html {
-    background: url(assets/images/home/home-desktop.jpg) no-repeat center center fixed, theme.$background;
+    background: url(assets/images/home/home-desktop.jpg) no-repeat center center / cover fixed, theme.$background;
   }
 }

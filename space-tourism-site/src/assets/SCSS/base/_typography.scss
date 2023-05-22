@@ -94,6 +94,15 @@ body {
   text-transform: uppercase;
 }
 
+@mixin nav {
+  font-family: $ff-body-accent;
+  font-size: var(--fs-nav);
+  letter-spacing: var(--ls-nav);
+  text-transform: uppercase;
+  text-align: center;
+  @content;
+}
+
 @include breakpoints.for-tablet {
   :root {
     // For Tablet

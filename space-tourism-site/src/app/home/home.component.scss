@@ -22,6 +22,22 @@ section {
   }
 }
 
+@include breakpoints.for-desktop{
+  section {
+    grid-template-columns: 1fr 1fr;
+
+    .home-text {
+      margin-inline: 10rem;
+      margin-block-start: 15rem;
+    }
+
+    .btn--explore {
+      margin-inline: 10rem;
+      margin-block-start: 22rem;
+    }
+  }
+}
+
 .heading {
   @include home-heading;
   margin-block-end: 0.5rem;
@@ -59,6 +75,12 @@ section {
   }
 }
 
+@include breakpoints.for-desktop {
+  .btn--explore {
+    margin-block-start: 7rem;
+  }
+}
+
 .text {
   line-height: var(--spacing);
 }
@@ -68,5 +90,16 @@ section {
     line-height: 2rem;
     padding-inline: 0.5rem;
     margin-block-start: -1rem;
+  }
+}
+
+
+@include breakpoints.for-desktop{
+  .home-text {
+    text-align: left;
+  }
+
+  .text {
+    max-width: 28rem;
   }
 }

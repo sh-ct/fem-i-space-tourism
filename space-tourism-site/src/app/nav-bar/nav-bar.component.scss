@@ -1,7 +1,7 @@
 @use '../../assets/SCSS/layout/flex';
 @use '../../assets/SCSS/layout/breakpoints';
 @use '../../assets/SCSS/animations/underline-fill' as animations;
-
+@use '../../assets/SCSS/base/typography';
 
 @include breakpoints.not-for-mobile {
   app-burger-menu {
@@ -43,19 +43,24 @@
 .nav {
 
   &__list {
+    @include typography.nav;
     --padding: 2.25rem 3rem;
 
     @include flex.flex-group {
       align-content: center;
     }
-
+    gap: 0;
     padding: var(--padding);
+    width: 60vw;
+
 
     > li {
       @include animations.underline-fill-center{
         bottom: -2.25rem;
         height: 3px;
       }
+      flex: 1 1;
+      text-align: center;
     }
   }
 
