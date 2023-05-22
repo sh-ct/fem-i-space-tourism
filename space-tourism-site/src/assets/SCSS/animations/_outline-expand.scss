@@ -1,0 +1,8 @@
+@mixin outline-expand($color, $expandSize) {
+  outline: 0 solid $color;
+  transition: outline-width 0.3s ease-out;
+
+  &:is(:hover, :focus-visible) {
+    outline-width: $expandSize;
+  }
+}

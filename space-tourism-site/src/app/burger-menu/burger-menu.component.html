@@ -2,7 +2,7 @@
 
 <ng-template #menuNotShown>
   <button type="button" (click)="toggleMenu()">
-      <img [src]="burgerIcon.url" [alt]="burgerIcon.alt" p>
+      <img [src]="burgerIcon.url" [alt]="burgerIcon.alt">
   </button>
 </ng-template>
 
@@ -15,7 +15,7 @@
 
     <nav class="nav">
       <ul class="nav__list">
-        <li *ngFor="let tab of tabs; let i = index">
+        <li *ngFor="let tab of tabs; let i = index" [routerLink]="tab.url" (click)="toggleMenu()">
           <strong class="tab-counter">0{{ i }}</strong> {{ tab.title }}
         </li>
       </ul>
