@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import jsonData from '../../assets/json/data.json';
 import { IDestination } from "./destination.model";
 
@@ -7,20 +7,24 @@ import { IDestination } from "./destination.model";
   templateUrl: './destination.component.html',
   styleUrls: ['./destination.component.scss']
 })
-export class DestinationComponent {
+export class DestinationComponent implements OnInit {
   data: IDestination[] = jsonData.destinations;
   index: number = 0;
+  selectedDestination: string = this.data[0].name;
 
-  stepIndex() {
-    if (this.index + 1 > this.data.length) {
-      this.index = 0;
-    } else {
-      ++this.index;
-    }
+  ngOnInit() {
+    document.body.className = 'destination';
   }
+
 
   get destination() {
-    return this.data[this.index];
+    return this.data
+      .find(planet =>
+        planet.name === this.selectedDestination
+      ) || this.data[0];
   }
 
+  get imageAltText() {
+    return ''
+  }
 }

@@ -43,7 +43,6 @@
 .nav {
 
   &__list {
-    @include typography.nav;
     --padding: 2.25rem 3rem;
 
     @include flex.flex-group {

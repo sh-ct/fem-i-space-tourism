@@ -1,4 +1,4 @@
-@use '../../assets/SCSS/base/typography' as *;
+@use '../../assets/SCSS/base/typography';
 @use '../../assets/SCSS/themes/theme';
 @use '../../assets/SCSS/animations/outline-expand' as *;
 @use '../../assets/SCSS/layout/breakpoints';
@@ -39,7 +39,18 @@ section {
 }
 
 .heading {
-  @include home-heading;
+  font-family: typography.$ff-body-accent;
+  font-size: var(--fs-page-heading);
+  letter-spacing: var(--ls-page-heading);
+  color: theme.$home-heading;
+  text-transform: uppercase;
+
+  span {
+    font-family: typography.$ff-accent;
+    font-size: var(--fs-home-heading-large);
+    letter-spacing: 0;
+    color: theme.$home-heading-large;
+  }
   margin-block-end: 0.5rem;
 }
 
@@ -53,9 +64,11 @@ section {
   --width: 10rem;
   --expand-width: calc(0.3 * var(--width));
 
-  @include home-cta;
   @include outline-expand(theme.$primary-transparent, var(--expand-width));
 
+  font-size: var(--fs-home-cta);
+  letter-spacing: var(--ls-home-cta);
+  text-transform: uppercase;
   background: theme.$home-cta-background;
   width: var(--width);
   aspect-ratio: 1/1;

@@ -5,6 +5,9 @@ $ff-body: 'Barlow', sans-serif;
 $ff-body-accent: 'Barlow Condensed', sans-serif;
 $ff-accent: 'Bellefair', serif;
 
+$fw-body: 400;
+$fw-bold: 700;
+
 $fs-000: 0.875rem;
 $fs-050: 0.938rem;
 $fs-100: 1rem;
@@ -47,7 +50,7 @@ $ls-600: 4.72px;
   // DESTINATIONS
   --fs-dest-nav: #{$fs-000};
   --ls-dest-nav: #{$ls-300};
-  --fs-dest-heading: #{$fs-700};
+  --fs-dest-heading: #{$fs-800};
   --fs-dest-stat-heading: #{$fs-000};
   --ls-dest-stat-heading: #{$ls-300};
   --fs-dest-stat-value: #{$fs-500};
@@ -69,38 +72,10 @@ body {
   font-family: $ff-body;
   font-size: var(--fs-body);
   color: theme.$neutral;
-
 }
 
-@mixin home-heading {
-  font-family: $ff-body-accent;
-  font-size: var(--fs-page-heading);
-  letter-spacing: var(--ls-page-heading);
-  //line-height: 100px;
-  color: theme.$home-heading;
-  text-transform: uppercase;
-
-  span {
-    font-family: $ff-accent;
-    font-size: var(--fs-home-heading-large);
-    letter-spacing: 0;
-    color: theme.$home-heading-large;
-  }
-}
-
-@mixin home-cta {
-  font-size: var(--fs-home-cta);
-  letter-spacing: var(--ls-home-cta);
-  text-transform: uppercase;
-}
-
-@mixin nav {
-  font-family: $ff-body-accent;
-  font-size: var(--fs-nav);
-  letter-spacing: var(--ls-nav);
-  text-transform: uppercase;
-  text-align: center;
-  @content;
+.bold {
+  font-weight: $fw-bold;
 }
 
 @include breakpoints.for-tablet {
@@ -114,8 +89,6 @@ body {
     --ls-page-heading: #{$ls-500};
 
     // HOME
-    //--fs-home-heading: #{$fs-300};
-    //--ls-home-heading: #{$ls-500};
     --fs-home-heading-large: #{$fs-title-large};
     --fs-home-cta: #{$fs-600};
     --ls-home-cta: #{$ls-200};
@@ -151,8 +124,6 @@ body {
     --ls-page-heading: #{$ls-600};
 
     // HOME
-    //--fs-home-heading: #{$fs-500};
-    //--ls-home-heading: #{$ls-600};
     --fs-home-heading-large: #{$fs-title-large};
     --fs-home-cta: #{$fs-600};
     --ls-home-cta: #{$ls-200};

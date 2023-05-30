@@ -1,11 +1,46 @@
-<section>
-  <h1><span>01</span>Pick Your Destination</h1>
-  <img [src]="destination.images.png" alt="">
-  <nav></nav>
-  <h2>{{destination.name}}</h2>
-  <p>{{destination.description}}</p>
-  <div>
-    <p><span>avg. distance</span>{{destination.distance}}</p>
-    <p><span>est. travel time</span>{{destination.travel}}</p>
+<article class="destination" [title]="destination.name + 'information'">
+
+  <h1 class="destination__heading page-heading">
+    <span>01</span>
+    Pick Your Destination
+  </h1>
+
+
+  <div class="destination__image" >
+    <picture [id]="destination.name">
+    <source [srcset]="destination.images.webp" type="image/webp">
+    <source [srcset]="destination.images.png" type="image/jpeg">
+    <img [src]="destination.images.png" [alt]="imageAltText">
+  </picture>
   </div>
-</section>
+
+
+  <nav class="destination__nav nav">
+    <ul class="nav__list">
+      <li *ngFor="let planet of data" (click)="selectedDestination = planet.name">
+        <a >{{ planet.name }}</a>
+      </li>
+    </ul>
+  </nav>
+
+  <section class="destination__description description" title="destination-name-and-description">
+    <h2 class="description__heading">{{destination.name}}</h2>
+    <p class="description__description">
+      {{destination.description}}
+    </p>
+  </section>
+
+
+  <div class="destination__stats">
+    <p class="stat">
+      <span class="stat__heading">avg. distance</span>
+      {{destination.distance}}
+    </p>
+
+    <p class="stat">
+      <span class="stat__heading">est. travel time</span>
+      {{destination.travel}}
+    </p>
+  </div>
+
+</article>

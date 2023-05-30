@@ -27,9 +27,7 @@ button {
 .nav {
 
   &__list {
-    @include typography.nav {
-      text-align: left;
-    }
+    text-align: left;
     flex-direction: column;
   }
 }
