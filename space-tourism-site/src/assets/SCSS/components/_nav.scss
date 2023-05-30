@@ -1,5 +1,6 @@
 @use '../layout/flex';
 @use '../abstracts/variables' as *;
+@use '../base/typography';
 
 .nav {
 
@@ -7,6 +8,12 @@
     @include flex.flex-group {
       gap: $spacing-400;
     }
+
+    font-family: typography.$ff-body-accent;
+    font-size: var(--fs-nav);
+    letter-spacing: var(--ls-nav);
+    text-transform: uppercase;
+    text-align: center;
     padding: 0;
 
     > li {
@@ -14,14 +21,6 @@
       cursor: pointer;
     }
   }
-
 }
 
-.tab-counter {
-  font-weight: bolder;
-}
 
-.blur {
-  background: hsla(0, 0%, 100%, 0.04);
-  backdrop-filter: blur(40.7742px); /* Note: backdrop-filter has minimal browser support */
-}

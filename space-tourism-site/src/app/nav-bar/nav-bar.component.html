@@ -4,7 +4,7 @@
     <nav class="nav">
       <ul class="nav__list blur">
         <li *ngFor="let tab of tabs; let i = index" [routerLink]="tab.url">
-          <strong class="tab-counter">0{{ i + 1 }}</strong>&nbsp;{{ tab.title }}
+          <span class="tab-counter bold">0{{ i + 1 }}</span>&nbsp;{{ tab.title }}
         </li>
       </ul>
     </nav>

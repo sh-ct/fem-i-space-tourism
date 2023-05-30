@@ -1,0 +1,17 @@
+@use '../base/typography';
+@use '../themes/theme';
+
+.page-heading {
+    font-family: typography.$ff-body-accent;
+    font-size: var(--fs-page-heading);
+    font-weight: typography.$fw-body;
+    letter-spacing: var(--ls-page-heading);
+    color: theme.$page-heading;
+    text-transform: uppercase;
+
+    span {
+      mix-blend-mode: normal;
+      opacity: 0.17;
+      font-weight: typography.$fw-bold;
+    }
+}

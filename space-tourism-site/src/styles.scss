@@ -3,26 +3,79 @@
 @use 'assets/SCSS/layout/breakpoints';
 @use 'assets/SCSS/components/buttons';
 @use 'assets/SCSS/components/nav';
+@use 'assets/SCSS/components/page-heading';
 @use 'assets/SCSS/themes/theme';
 @use 'assets/SCSS/base/typography';
 @use 'assets/SCSS/abstracts/variables' as *;
-
-html {
-  background: url(assets/images/home/home-mobile.jpg) no-repeat center center / cover fixed, theme.$background;
-}
+@use 'assets/SCSS/abstracts/utility';
 
 body {
   color: theme.$font-color-body;
 }
 
+
+body {
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+  background-attachment: fixed;
+  background-color: theme.$background;
+
+  &.home {
+    background-image: url(assets/images/home/background-home-mobile.jpg);
+  }
+
+  &.destination {
+    background-image: url(assets/images/destination/background-destination-mobile.jpg);
+  }
+
+  &.crew {
+    background-image: url(assets/images/crew/background-crew-mobile.jpg);
+  }
+
+  &.technology {
+    background-image: url(assets/images/technology/background-technology-mobile.jpg);
+  }
+
+}
+
+
 @include breakpoints.for-tablet {
-  html {
-    background: url(assets/images/home/home-tablet.jpg) no-repeat center center / cover fixed, theme.$background;
+  body {
+    &.home {
+      background-image: url(assets/images/home/background-home-tablet.jpg);
+    }
+
+    &.destination {
+      background-image: url(assets/images/destination/background-destination-tablet.jpg);
+    }
+
+    &.crew {
+      background-image: url(assets/images/crew/background-crew-tablet.jpg);
+    }
+
+    &.technology {
+      background-image: url(assets/images/technology/background-technology-tablet.jpg);
+    }
   }
 }
 
 @include breakpoints.for-desktop {
-  html {
-    background: url(assets/images/home/home-desktop.jpg) no-repeat center center / cover fixed, theme.$background;
+  body {
+    &.home {
+      background-image: url(assets/images/home/background-home-desktop.jpg);
+    }
+
+    &.destination {
+      background-image: url(assets/images/destination/background-destination-desktop.jpg);
+    }
+
+    &.crew {
+      background-image: url(assets/images/crew/background-crew-desktop.jpg);
+    }
+
+    &.technology {
+      background-image: url(assets/images/technology/background-technology-desktop.jpg);
+    }
   }
 }
