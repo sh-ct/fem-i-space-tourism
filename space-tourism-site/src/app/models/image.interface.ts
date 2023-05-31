@@ -4,6 +4,6 @@ export interface IImage {
 }
 
 export interface IOrientedImage {
-  portrait: string;
-  landscape: string;
+  forLandscape: string;
+  forPortrait: string;
 }
