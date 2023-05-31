@@ -1,17 +1,17 @@
 @mixin for-mobile {
-  @media only screen and (width < 400px) {
+  @media only screen and (width < 600px) {
     @content
   }
 }
 
 @mixin not-for-mobile {
-  @media only screen and (width >= 400px) {
+  @media only screen and (width >= 600px) {
     @content;
   }
 }
 
 @mixin for-tablet {
-  @media only screen and (400px <= width <= 1000px) {
+  @media only screen and (600px <= width <= 1000px) {
     @content;
   }
 }

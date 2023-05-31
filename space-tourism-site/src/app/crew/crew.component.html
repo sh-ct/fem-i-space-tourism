@@ -1,1 +1,33 @@
-<p>crew works!</p>
+<article class="crew">
+
+  <h1 class="crew__heading page-heading">
+    <span>02</span>
+    Meet Your Crew
+  </h1>
+
+  <picture class="crew__image">
+    <source [srcset]="crewMember.images.webp" type="image/webp">
+    <source [srcset]="crewMember.images.png" type="image/png">
+    <img [src]="crewMember.images.png" [alt]="imageAltText">
+  </picture>
+
+  <nav class="crew__nav">
+    <button *ngFor="let _ of [].constructor(data.length); let i = index"
+            (click)="crewIndex = i"
+            class="btn btn--dot"
+            [class.active]="crewIndex === i"
+    ></button>
+  </nav>
+
+  <div class="crew__bio bio">
+    <h2 class="bio__heading">
+      <span class="bio__role">{{ crewMember.role }}</span>
+      {{ crewMember.name }}
+    </h2>
+
+    <p>
+      {{ crewMember.bio }}
+    </p>
+  </div>
+
+</article>
