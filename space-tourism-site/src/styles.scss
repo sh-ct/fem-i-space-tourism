@@ -11,8 +11,12 @@
 
 body {
   color: theme.$font-color-body;
+  overflow-x: hidden;
 }
 
+main {
+  height: 100%;
+}
 
 body {
   background-repeat: no-repeat;

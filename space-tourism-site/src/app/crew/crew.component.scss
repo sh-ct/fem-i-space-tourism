@@ -1,0 +1,200 @@
+@use '../../assets/SCSS/layout/breakpoints';
+@use '../../assets/SCSS/layout/flex';
+@use '../../assets/SCSS/base/typography';
+@use '../../assets/SCSS/abstracts/variables' as *;
+@use '../../assets/SCSS/themes/theme';
+
+.crew {
+  text-align: center;
+  display: grid;
+  grid-template-areas:
+    'h'
+    'i'
+    'n'
+    'b'
+  ;
+  padding-inline: $spacing-300;
+  position: static;
+}
+
+@include breakpoints.for-tablet {
+  .crew {
+    grid-template-areas:
+      'h'
+      'b'
+      'n'
+      'i'
+    ;
+    padding-block-end: 0;
+  }
+}
+
+@include breakpoints.for-desktop {
+  :host {
+    height: 100%;
+    display: block;
+    overflow: hidden;
+  }
+
+  .crew {
+    grid-template-areas:
+      'h i'
+      'b i'
+      'n i'
+    ;
+    grid-template-rows: auto 1fr 6rem;
+    grid-template-columns: 35vw 1fr;
+    height: 100%;
+    padding: $spacing-800 0 0 10vw;
+    text-align: start;
+  }
+}
+
+.crew {
+  &__heading {
+    grid-area: h;
+    margin-block-end: $spacing-400;
+  }
+
+  &__image {
+    --size: 222px;
+    grid-area: i;
+
+    @include flex.flex-group {
+      justify-content: center;
+    }
+    border-bottom: 1px solid theme.$neutral-grey;
+    margin-block-end: $spacing-400;
+    height: var(--size);
+
+    img {
+      display: block;
+      max-height: var(--size);
+    }
+  }
+
+  &__nav {
+    grid-area: n;
+    @include flex.flex-group {
+      justify-content: center;
+      gap: $spacing-200;
+    }
+    margin-block-end: $spacing-400;
+  }
+
+  &__bio {
+    grid-area: b;
+    align-self: center;
+  }
+}
+
+@include breakpoints.for-tablet {
+  .crew {
+    &__heading {
+      text-align: left;
+      margin-block: $spacing-450;
+    }
+
+    &__image {
+      --size: 532px;
+      margin: 0;
+      border: none;
+    }
+
+    &__nav {
+      margin-block: $spacing-450;
+    }
+  }
+}
+
+@include breakpoints.for-desktop {
+  .crew {
+    &__heading {
+
+    }
+
+    &__image {
+      height: auto;
+      border: none;
+      align-self: end;
+      margin: 0;
+
+      img {
+        max-height: unset;
+      }
+    }
+
+    &__nav {
+      justify-content: start;
+      gap: $spacing-350;
+    }
+  }
+}
+
+.bio {
+  --name-line-height: 28px;
+  --role-line-height: 18px;
+
+  &__heading {
+    font-size: var(--fs-crew-name);
+    line-height: var(--name-line-height);
+    font-family: typography.$ff-accent;
+    text-transform: uppercase;
+    margin-block-end: $spacing-200;
+  }
+
+  &__role {
+    font-size: var(--fs-crew-role);
+    line-height: var(--role-line-height);
+    color: theme.$neutral;
+    opacity: 0.5;
+    display: block;
+    margin-block-end: $spacing-100;
+  }
+}
+
+@include breakpoints.for-tablet {
+  .bio {
+    padding-inline: $spacing-700;
+    --name-line-height: $spacing-500;
+    --role-line-height: 45px;
+
+    &__role {
+      margin: 0;
+    }
+  }
+}
+
+@include breakpoints.for-desktop {
+  .bio {
+    line-height: $spacing-400;
+    --name-line-height: 64px;
+    --role-line-height: 37px;
+  }
+}
+
+.btn--dot {
+  --size: 10px;
+  width: var(--size);
+  height: var(--size);
+  border-radius: 50%;
+  padding: 0;
+  background-color: theme.$neutral;
+  opacity: 0.17;
+
+  &:is(:hover, :focus-visible):not(.active) {
+    opacity: 0.5;
+  }
+}
+
+
+@include breakpoints.for-desktop {
+  .btn--dot {
+    --size: 15px;
+  }
+}
+
+.active {
+  opacity: 1;
+}
+
