@@ -181,6 +181,7 @@
   padding: 0;
   background-color: theme.$neutral;
   opacity: 0.17;
+  transition: all 0.3s ease-in;
 
   &:is(:hover, :focus-visible):not(.active) {
     opacity: 0.5;

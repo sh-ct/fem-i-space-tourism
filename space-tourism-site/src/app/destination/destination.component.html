@@ -17,7 +17,7 @@
 
   <nav class="destination__nav nav">
     <ul class="nav__list">
-      <li *ngFor="let planet of data" (click)="selectedDestination = planet.name">
+      <li *ngFor="let planet of data" (click)="selectedDestination = planet.name" [class.active]="planet.name === selectedDestination">
         <a >{{ planet.name }}</a>
       </li>
     </ul>

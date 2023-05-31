@@ -5,6 +5,7 @@
 @use '../../assets/SCSS/abstracts/variables' as *;
 @use '../../assets/SCSS/abstracts/mixins';
 @use '../../assets/SCSS/themes/theme';
+@use '../../assets/SCSS/animations/underline-fill' as animations;
 
 
 .destination {
@@ -46,6 +47,24 @@
     grid-area: n;
     padding-block-end: $spacing-100;
     margin-block-end: $spacing-150;
+
+    li {
+      --bottom: -0.5rem;
+      @include animations.underline-fill-center{
+        bottom: var(--bottom);
+        height: 3px;
+      }
+    }
+
+    li.active {
+      @include animations.underline-fill-center{
+        bottom: var(--bottom);
+        height: 3px;
+        width: 100%;
+        opacity: 1;
+        color: theme.$neutral;
+      }
+    }
   }
 
   &__description {
@@ -126,6 +145,10 @@
     &__nav {
       justify-content: start;
       margin-block-end: 0;
+
+      li {
+        --bottom: 1.5rem;
+      }
     }
   }
 }

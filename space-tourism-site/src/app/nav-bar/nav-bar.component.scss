@@ -2,6 +2,7 @@
 @use '../../assets/SCSS/layout/breakpoints';
 @use '../../assets/SCSS/animations/underline-fill' as animations;
 @use '../../assets/SCSS/base/typography';
+@use '../../assets/SCSS/themes/theme';
 
 @include breakpoints.not-for-mobile {
   app-burger-menu {
@@ -60,6 +61,16 @@
       }
       flex: 1 1;
       text-align: center;
+
+      &.active {
+        @include animations.underline-fill-center{
+          bottom: -2.25rem;
+          height: 3px;
+          width: 100%;
+          opacity: 1;
+          color: theme.$neutral;
+        }
+      }
     }
   }
 

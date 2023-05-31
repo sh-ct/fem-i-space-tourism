@@ -1,0 +1,269 @@
+@use '../../assets/SCSS/layout/breakpoints';
+@use '../../assets/SCSS/layout/flex';
+@use '../../assets/SCSS/abstracts/variables' as *;
+@use '../../assets/SCSS/themes/theme';
+@use '../../assets/SCSS/base/typography';
+
+.technology {
+  display: grid;
+  grid-template-areas:
+    'h'
+    'i'
+    'n'
+    'd'
+  ;
+  justify-items: center;
+  text-align: center;
+}
+
+@include breakpoints.for-desktop-or-mobile-landscape {
+  :host {
+    height: 100%;
+    display: block;
+    overflow: hidden;
+  }
+
+  .technology {
+    height: 100%;
+    padding-inline-start: $spacing-650;
+    grid-template-areas:
+      'h h .'
+      'n d i'
+    ;
+    grid-template-columns: 15vw 40vw auto;
+    align-items: center;
+  }
+}
+
+.technology {
+  &__heading {
+    grid-area: h;
+  }
+
+  &__image {
+    grid-area: i;
+    margin-block: $spacing-400;
+  }
+
+  &__nav {
+    --size: 40px;
+
+    grid-area: n;
+    @include flex.flex-group {
+      gap: $spacing-300;
+    }
+
+    margin-block-end: $spacing-300;
+    font-size: var(--fs-tech-nav);
+  }
+
+  &__description {
+    grid-area: d;
+  }
+}
+
+@include breakpoints.for-tablet {
+  .technology {
+    &__heading {
+      justify-self: start;
+      margin-inline: $spacing-450;
+      margin-block-start: $spacing-450;
+    }
+
+    &__image {
+      margin-block: $spacing-550;
+    }
+
+    &__nav {
+      --size: 60px;
+      margin-block-end: $spacing-450;
+    }
+
+    &__description {
+
+    }
+  }
+}
+
+@include breakpoints.for-desktop-or-mobile-landscape {
+  .technology {
+    &__heading {
+      justify-self: start;
+      align-self: end;
+      padding-inline: $spacing-650;
+    }
+
+    &__image {
+      justify-self: end;
+    }
+
+    &__nav {
+      --size: 80px;
+      gap: $spacing-400;
+      flex-direction: column;
+      justify-self: center;
+    }
+
+    &__description {
+    }
+  }
+}
+
+.description {
+  padding-inline: $spacing-300;
+
+  &__heading {
+    --heading-line-height: $spacing-200;
+    --tech-line-height: $spacing-300;
+
+    line-height: var(--heading-line-height);
+    font-size: var(--fs-tech-heading);
+    letter-spacing: var(--ls-tech-heading);
+    text-transform: uppercase;
+    font-family: typography.$ff-body-accent;
+    font-weight: typography.$fw-body;
+    margin-block-end: $spacing-200;
+
+
+    span {
+      display: block;
+      font-size: var(--fs-tech-vehicle);
+      line-height: var(--tech-line-height);
+    font-family: typography.$ff-accent;
+      color: theme.$neutral;
+    }
+
+  }
+
+  &__body {
+    line-height: 25px;
+  }
+}
+
+@include breakpoints.for-tablet {
+  .description {
+    padding-inline: $spacing-900;
+
+    &__heading {
+      --heading-line-height: 19px;
+      --tech-line-height: 45px;
+
+      span {
+        margin-block-start: $spacing-200;
+      }
+
+    }
+
+    &__body {
+      line-height: 28px;
+    }
+  }
+}
+
+@include breakpoints.for-desktop-or-mobile-landscape {
+  .description {
+    text-align: start;
+    padding: 0;
+
+    &__heading {
+      --heading-line-height: 19px;
+      --tech-line-height: 64px;
+
+      span {
+        margin-block-start: $spacing-100;
+      }
+    }
+
+    &__body {
+      max-width: min(30rem, 30vw);
+    }
+  }
+}
+
+@include breakpoints.for-widescreen {
+  .technology__image {
+    margin-inline-end: 8rem;
+  }
+}
+
+.btn--ghost {
+  width: var(--size);
+  height: var(--size);
+  border-radius: 50%;
+  background-color: transparent;
+  border: 1px solid hsla(0, 0, 100%, 25%);
+  color: theme.$neutral;
+  transition: all 0.3s ease-in;
+
+  &:is(:hover, :focus-visible):not(.active) {
+    border-color: theme.$neutral;
+  }
+
+}
+
+.active {
+  background-color: theme.$neutral;
+  color: theme.$primary;
+}
+
+// For only mobile in landscape mode
+@include breakpoints.for-mobile-landscape {
+  .technology {
+    grid-template-areas:
+      'h h i'
+      'n d i'
+    ;
+    grid-template-rows: auto 1fr;
+    padding: 0;
+
+    &__heading {
+      padding-inline-start: $spacing-400;
+    }
+
+    &__image {
+      margin: 0;
+    }
+
+    &__nav {
+      --size: 40px;
+      gap: $spacing-200;
+    }
+  }
+
+  .description {
+    text-align: center;
+
+    &__heading {
+      --heading-line-height: 17px;
+      --tech-line-height: 27px;
+    }
+
+    &__body {
+      max-width: 100%;
+    }
+  }
+}
+
+// For tablet in landscape mode
+@include breakpoints.for-tablet-landscape {
+  .technology {
+    padding: 0;
+    grid-template-rows: 15vh 1fr;
+
+    &__heading {
+      margin-inline: 0;
+    }
+  }
+
+  .description__heading {
+    --heading-line-height: 45px;
+    font-size: typography.$fs-100;
+    letter-spacing: typography.$ls-400;
+
+
+    span {
+      font-size: typography.$fs-700;
+      margin: 0;
+    }
+    }
+}
