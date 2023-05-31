@@ -16,13 +16,7 @@
   text-align: center;
 }
 
-@include breakpoints.for-tablet {
-  .technology {
-
-  }
-}
-
-@include breakpoints.for-desktop {
+@include breakpoints.for-desktop-or-mobile-landscape {
   :host {
     height: 100%;
     display: block;
@@ -91,7 +85,7 @@
   }
 }
 
-@include breakpoints.for-desktop {
+@include breakpoints.for-desktop-or-mobile-landscape {
   .technology {
     &__heading {
       justify-self: start;
@@ -166,7 +160,7 @@
   }
 }
 
-@include breakpoints.for-desktop {
+@include breakpoints.for-desktop-or-mobile-landscape {
   .description {
     text-align: start;
     padding: 0;
@@ -199,6 +193,7 @@
   background-color: transparent;
   border: 1px solid hsla(0, 0, 100%, 25%);
   color: theme.$neutral;
+  transition: all 0.3s ease-in;
 
   &:is(:hover, :focus-visible):not(.active) {
     border-color: theme.$neutral;
@@ -206,19 +201,69 @@
 
 }
 
-@include breakpoints.for-tablet {
-  .btn--ghost {
-
-  }
-}
-
-@include breakpoints.for-desktop {
-  .btn--ghost {
-
-  }
-}
-
 .active {
   background-color: theme.$neutral;
   color: theme.$primary;
+}
+
+// For only mobile in landscape mode
+@include breakpoints.for-mobile-landscape {
+  .technology {
+    grid-template-areas:
+      'h h i'
+      'n d i'
+    ;
+    grid-template-rows: auto 1fr;
+    padding: 0;
+
+    &__heading {
+      padding-inline-start: $spacing-400;
+    }
+
+    &__image {
+      margin: 0;
+    }
+
+    &__nav {
+      --size: 40px;
+      gap: $spacing-200;
+    }
+  }
+
+  .description {
+    text-align: center;
+
+    &__heading {
+      --heading-line-height: 17px;
+      --tech-line-height: 27px;
+    }
+
+    &__body {
+      max-width: 100%;
+    }
+  }
+}
+
+// For tablet in landscape mode
+@include breakpoints.for-tablet-landscape {
+  .technology {
+    padding: 0;
+    grid-template-rows: 15vh 1fr;
+
+    &__heading {
+      margin-inline: 0;
+    }
+  }
+
+  .description__heading {
+    --heading-line-height: 45px;
+    font-size: typography.$fs-100;
+    letter-spacing: typography.$ls-400;
+
+
+    span {
+      font-size: typography.$fs-700;
+      margin: 0;
+    }
+    }
 }

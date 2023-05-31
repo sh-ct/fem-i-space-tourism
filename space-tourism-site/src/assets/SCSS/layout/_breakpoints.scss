@@ -1,17 +1,29 @@
 @mixin for-mobile {
-  @media only screen and (width < 600px) {
+  @media only screen and (width < 700px) {
     @content
   }
 }
 
 @mixin not-for-mobile {
-  @media only screen and (width >= 600px) {
+  @media only screen and (width >= 700px) {
+    @content;
+  }
+}
+
+@mixin for-mobile-landscape {
+  @media only screen and (width < 700px) and (orientation: landscape) {
     @content;
   }
 }
 
 @mixin for-tablet {
-  @media only screen and (600px <= width <= 1000px) {
+  @media only screen and (700px <= width <= 1000px) {
+    @content;
+  }
+}
+
+@mixin for-tablet-landscape {
+  @media only screen and (width >= 700px) and (orientation: landscape) {
     @content;
   }
 }
@@ -22,8 +34,21 @@
   }
 }
 
+@mixin for-desktop-or-mobile-landscape {
+  @media only screen and (width >= 1000px),
+  only screen and (width < 700px) and (orientation: landscape) {
+    @content;
+  }
+}
+
 @mixin for-widescreen {
   @media only screen and (width >= 1500px) {
+    @content;
+  }
+}
+
+@mixin for-landscape {
+  @media only screen and (orientation: landscape) {
     @content;
   }
 }
